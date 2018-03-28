@@ -1,0 +1,47 @@
+
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addUser();">+ Add</button>
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>UserName</th>
+                    <th>Password</th>
+                    <th>Role</th>
+
+                    <th width="120px">Action</th>
+                </tr>
+                               
+                <% if(user.length){ 
+                                
+                 for(var i = 0;i < user.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=user[i].username%></td>
+                    <td><%=user[i].password%></td>
+                    <td><%=user[i].role%></td>
+
+                    <td>
+                        <a class="a-inside edit" href="../profil/edit/<%=user[i].id%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../profil/delete/<%=user[i].id%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
